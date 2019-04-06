@@ -1,4 +1,5 @@
 import React from 'react'
+import TextTruncate from 'react-text-truncate'
 
 const BookCard = (props) => {
     const { volumeInfo } = props.info;
@@ -11,7 +12,12 @@ const BookCard = (props) => {
         <img src={ thumbNail } alt="book"/>
         <div className="desc">
             <h2>{ title }</h2>
-            <p>{description}</p>
+            <p>
+                <TextTruncate
+                    line={4}
+                    truncateText="…"
+                    text={description} />
+            </p>
         </div>
     </div>
     )
