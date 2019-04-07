@@ -3,9 +3,9 @@ import React from "react";
 const SearchArea = props => {
     return (
         <div className="search-area">
-            <form onSubmit={props.searchBook}>
+            <form onSubmit={props.onSearchSubmit}>
                 <input
-                    onChange={props.handleSearch}
+                    onChange={props.onSearchFieldChange}
                     placeholder="Search books"
                     type="text"
                 />

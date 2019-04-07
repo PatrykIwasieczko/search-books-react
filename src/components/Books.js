@@ -12,7 +12,7 @@ class Books extends Component {
         };
     }
 
-    searchBook = e => {
+    onSearchSubmit = e => {
         e.preventDefault();
         request
             .get("https://www.googleapis.com/books/v1/volumes")
@@ -22,7 +22,7 @@ class Books extends Component {
             });
     };
 
-    handleSearch = e => {
+    onSearchFieldChange = e => {
         this.setState({ searchField: e.target.value });
     };
 
@@ -30,8 +30,8 @@ class Books extends Component {
         return (
             <div>
                 <SearchArea
-                    searchBook={this.searchBook}
-                    handleSearch={this.handleSearch}
+                    onSearchSubmit={this.onSearchSubmit}
+                    onSearchFieldChange={this.onSearchFieldChange}
                 />
                 <BookList books={this.state.books} />
             </div>
