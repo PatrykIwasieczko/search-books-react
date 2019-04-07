@@ -4,13 +4,10 @@ import BookList from "./BookList";
 import request from "superagent";
 
 class Books extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            books: [],
-            searchField: ""
-        };
-    }
+    state = {
+        books: [],
+        searchField: ""
+    };
 
     onSearchSubmit = e => {
         e.preventDefault();
