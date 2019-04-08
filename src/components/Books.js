@@ -11,12 +11,16 @@ class Books extends Component {
 
     onSearchSubmit = e => {
         e.preventDefault();
-        request
-            .get("https://www.googleapis.com/books/v1/volumes")
-            .query({ q: this.state.searchField })
-            .then(data => {
-                this.setState({ books: [...data.body.items] });
-            });
+        try {
+            request
+                .get("https://www.googleapis.com/books/v1/volumes")
+                .query({ q: this.state.searchField })
+                .then(data => {
+                    this.setState({ books: [...data.body.items] });
+                });
+        } catch (error) {
+            alert("An error occurred. Check your internet connection");
+        }
     };
 
     onSearchFieldChange = e => {
