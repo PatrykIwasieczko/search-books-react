@@ -19,7 +19,7 @@ class Books extends Component {
                     this.setState({ books: [...data.body.items] });
                 });
         } catch (error) {
-            alert("An error occurred. Check your internet connection");
+            alert("Sorry, something went wrong");
         }
     };
 
